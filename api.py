@@ -87,3 +87,8 @@ async def detect_food(file: UploadFile = File(...)):
 @app.get("/")
 def read_root():
    return {"message": "FastAPI 음식 탐지 서버입니다."}
+
+# 마지막 부분에 추가
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
