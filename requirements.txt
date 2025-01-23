@@ -1,0 +1,10 @@
+# 실행코드 pip install -r requirements.txt
+
+fastapi
+uvicorn
+Pillow
+torch
+python-multipart
+ultralytics
+aiofiles
+requests
