@@ -24,7 +24,8 @@ app.add_middleware(
 
 # 모델 파일 경로 및 URL
 MODEL_PATH = "best10_01.pt"
-MODEL_URL = "https://drive.google.com/uc?id=1NtRbnCAb0I0ZtVuvsaJJ8eoQ64VYvnfm"
+# MODEL_URL = "https://drive.google.com/uc?id=1NtRbnCAb0I0ZtVuvsaJJ8eoQ64VYvnfm"
+MODEL_URL ="..."
 
 # 모델 파일 다운로드 함수
 def download_model():
@@ -44,7 +45,7 @@ def download_model():
 # 모델 로드
 def load_model():
    try:
-       model = torch.hub.load('ultralytics/yolov5', 'custom', path=MODEL_PATH)
+       model = torch.hub.load('ultralytics/yolov5', 'custom', path='best10_01.pt')
        print("모델이 성공적으로 로드되었습니다.")
        return model
    except Exception as e:
