@@ -53,13 +53,11 @@ def download_model():
 
 def load_model():
     try:
-        from ultralytics import YOLO
-        model = YOLO('best10_01.pt')
+        model = torch.hub.load('ultralytics/yolov5', 'custom', path='best10_01.pt', force_reload=True)
         return model
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"모델 로드 중 오류 발생: {str(e)}")
-
-# 전역 변수로 모델 선언
+       # 전역 변수로 모델 선언
 model = None
 
 @app.on_event("startup")
