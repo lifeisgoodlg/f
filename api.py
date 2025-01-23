@@ -43,13 +43,21 @@ def download_model():
            raise HTTPException(status_code=500, detail=f"다운로드 중 오류 발생: {str(e)}")
 
 # 모델 로드
+# def load_model():
+#    try:
+#        model = torch.hub.load('ultralytics/yolov5', 'custom', path='best10_01.pt')
+#        print("모델이 성공적으로 로드되었습니다.")
+#        return model
+#    except Exception as e:
+#        raise HTTPException(status_code=500, detail=f"모델 로드 중 오류 발생: {str(e)}")
+
 def load_model():
-   try:
-       model = torch.hub.load('ultralytics/yolov5', 'custom', path='best10_01.pt')
-       print("모델이 성공적으로 로드되었습니다.")
-       return model
-   except Exception as e:
-       raise HTTPException(status_code=500, detail=f"모델 로드 중 오류 발생: {str(e)}")
+    try:
+        from ultralytics import YOLO
+        model = YOLO('best10_01.pt')
+        return model
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"모델 로드 중 오류 발생: {str(e)}")
 
 # 전역 변수로 모델 선언
 model = None
