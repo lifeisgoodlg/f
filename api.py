@@ -7,8 +7,8 @@ import requests
 import pathlib
 
 # Windows 경로 문제 해결
-temp = pathlib.PosixPath
-pathlib.PosixPath = pathlib.WindowsPath
+# temp = pathlib.PosixPath
+# pathlib.PosixPath = pathlib.WindowsPath
 
 app = FastAPI()
 
