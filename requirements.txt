@@ -4,7 +4,7 @@ fastapi
 uvicorn
 Pillow
 torch
-python-multipart
-ultralytics
-aiofiles
-requests
+# python-multipart
+# ultralytics
+# aiofiles
+# requests
